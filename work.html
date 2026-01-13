@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | OwnAWeb | Web Designer Agency</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="OwnAWeb portfolio - Explore our web design projects. UI/UX, branding, and digital solutions that transform ideas into beautiful digital experiences.">
+    <meta name="keywords" content="web design portfolio, UI/UX projects, branding work, digital design, OwnAWeb agency">
+    <meta name="author" content="OwnAWeb">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Our Work | OwnAWeb Web Designer Agency">
+    <meta property="og:description" content="A collection of transformative web design projects by OwnAWeb agency.">
+    <meta property="og:type" content="website">
+
+    <!-- Simple Emoji Favicon for Web Developer -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </noscript>
+
+    <style>
+        /* Prevent FOUC */
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --gray-lighter: #f1f5f9;
+            --card: #1e293b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Skip to main content for accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 1001;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* Header & Navigation - Consistent with index.html */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: 40px;
+            transition: var(--transition);
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--light);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            z-index: 1002;
+        }
+
+        /* Main Content - Consistent with index.html section structure */
+        .section {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Header - Matches index.html section-header style */
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Agency Badge - From index.html */
+        .agency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--gray-light);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .category-btn:hover,
+        .category-btn:focus {
+            border-color: var(--primary);
+            color: var(--primary);
+            outline: none;
+        }
+
+        .category-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Work Grid - Improved to match index.html project cards */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .work-card {
+            background: var(--card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .work-card:hover,
+        .work-card:focus-within {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
+        }
+
+        .work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .work-card:hover::before {
+            opacity: 1;
+        }
+
+        .work-image {
+            height: 250px;
+            background: linear-gradient(135deg, #334155, #475569);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+        }
+
+        .work-number {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'Space Grotesk', sans-serif;
+            z-index: 1;
+        }
+
+        .work-preview {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .work-content {
+            padding: 2rem;
+        }
+
+        .work-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--light);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .work-content p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .work-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .work-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Buttons - Consistent with index.html */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            outline: none;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--gray);
+            color: var(--gray-light);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        /* Contact Section - Consistent with index.html */
+        .contact {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 2rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .contact p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--primary);
+            text-decoration: underline;
+            outline: none;
+        }
+
+        .email-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-light);
+        }
+
+        /* Social Media Links - Consistent with index.html */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            outline: none;
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer - Consistent with index.html */
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-top: 1rem;
+        }
+
+        /* Mobile Styles - Consistent with index.html */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 1.5rem;
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 1001;
+                width: 280px;
+                height: 100vh;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links a:hover {
+                background: rgba(37, 99, 235, 0.1);
+                border-color: var(--primary);
+            }
+
+            .nav-links a.active {
+                background: rgba(37, 99, 235, 0.15);
+                border-color: var(--primary);
+            }
+
+            .section {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-image {
+                height: 200px;
+            }
+
+            .category-filter {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+                margin-bottom: 3rem;
+            }
+
+            .category-btn {
+                flex-shrink: 0;
+            }
+
+            .contact {
+                padding: 2.5rem 1.5rem;
+                margin: 1rem auto;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 300px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Animations - Consistent with index.html */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .btn:hover,
+            .btn:focus,
+            .work-card:hover,
+            .social-link:hover {
+                transform: none;
+            }
+
+            .fade-in {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header - Consistent with index.html -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                <span class="logo-text">OwnAWeb</span>
+            </a>
+
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Work Section - Consistent with index.html section structure -->
+        <section class="section fade-in">
+            <div class="section-header">
+                <div class="agency-badge">
+                    <span>✨</span> Portfolio Showcase
+                </div>
+                <h1 class="section-title">Our Featured Work</h1>
+                <p class="section-subtitle">A curated selection of projects that showcase our approach to design, development, and digital transformation.</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All Projects</button>
+                <button class="category-btn" data-category="web">Web Design</button>
+                <button class="category-btn" data-category="ui">UI/UX</button>
+                <button class="category-btn" data-category="branding">Branding</button>
+                <button class="category-btn" data-category="mobile">Mobile</button>
+            </div>
+
+            <!-- Work Grid -->
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <div class="work-card fade-in" tabindex="0" data-category="web">
+                    <div class="work-image">
+                        <div class="work-number">01</div>
+                        <div class="work-preview">Bloom Store</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>A modern online store design for a sustainable fashion brand. Focused on creating a seamless shopping experience with clean product displays and intuitive navigation.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">Web Design</span>
+                            <span class="work-tag">E-commerce</span>
+                            <span class="work-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-card fade-in" tabindex="0" data-category="ui">
+                    <div class="work-image">
+                        <div class="work-number">02</div>
+                        <div class="work-preview">Nova Finance</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Financial Dashboard</h3>
+                        <p>Designed a complex financial dashboard that presents data in an accessible way. Created custom data visualizations and intuitive controls for financial analysis.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">UI Design</span>
+                            <span class="work-tag">Dashboard</span>
+                            <span class="work-tag">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-card fade-in" tabindex="0" data-category="branding">
+                    <div class="work-image">
+                        <div class="work-number">03</div>
+                        <div class="work-preview">Zenith Tech</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Tech Startup Branding</h3>
+                        <p>Complete visual identity for a technology startup. Developed the logo, color system, typography, and brand guidelines to establish their market presence.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">Branding</span>
+                            <span class="work-tag">Identity</span>
+                            <span class="work-tag">Visual Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="work-card fade-in" tabindex="0" data-category="mobile">
+                    <div class="work-image">
+                        <div class="work-number">04</div>
+                        <div class="work-preview">HealthTrack</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Fitness App UI</h3>
+                        <p>Mobile application design for fitness tracking. Created an engaging interface that motivates users while making workout data easy to understand.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">Mobile Design</span>
+                            <span class="work-tag">App UI</span>
+                            <span class="work-tag">Health Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="work-card fade-in" tabindex="0" data-category="web">
+                    <div class="work-image">
+                        <div class="work-number">05</div>
+                        <div class="work-preview">Artisan Coffee</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Cafe Website</h3>
+                        <p>Website design for a specialty coffee shop. Focused on creating a warm, inviting online presence that reflects their commitment to quality and community.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">Web Design</span>
+                            <span class="work-tag">Food & Beverage</span>
+                            <span class="work-tag">Local Business</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="work-card fade-in" tabindex="0" data-category="ui">
+                    <div class="work-image">
+                        <div class="work-number">06</div>
+                        <div class="work-preview">TravelEase</div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Travel Booking Interface</h3>
+                        <p>Designed a user-friendly booking platform for travel services. Simplified the complex booking process into intuitive steps with clear visual feedback.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">UI/UX</span>
+                            <span class="work-tag">Travel</span>
+                            <span class="work-tag">Booking System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Consistent with index.html -->
+        <section class="section">
+            <div class="contact">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's collaborate to create something amazing together. Share your ideas and we'll bring them to life.</p>
+
+                <div class="contact-info">
+                    <svg class="email-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <a href="mailto:ownaweb@hotmail.com">ownaweb@hotmail.com</a>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="contact.html" class="btn">Start a Conversation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Consistent with index.html -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="nav-container" style="justify-content: center; margin-bottom: 2rem;">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                    <span class="logo-text">OwnAWeb</span>
+                </a>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+            </div>
+
+            <p>© 2026 OwnAWeb. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--gray);">
+                Follow us on social media for updates and insights
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Prevent FOUC
+        document.addEventListener('DOMContentLoaded', () => {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+
+            // Initialize mobile menu
+            initMobileMenu();
+
+            // Initialize category filter
+            initCategoryFilter();
+        });
+
+        // Initialize mobile menu functionality - Consistent with index.html
+        function initMobileMenu() {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (!mobileToggle || !navLinks) return;
+
+            // Toggle menu on button click
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-container') && navLinks.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close menu when clicking on a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Handle keyboard navigation for mobile toggle
+            mobileToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleMobileMenu();
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+
+            // Toggle between hamburger and close icon
+            if (navLinks.classList.contains('active')) {
+                mobileToggle.textContent = '✕';
+                mobileToggle.setAttribute('aria-label', 'Close menu');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileToggle.textContent = '☰';
+                mobileToggle.setAttribute('aria-label', 'Open menu');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            mobileToggle.textContent = '☰';
+            mobileToggle.setAttribute('aria-label', 'Open menu');
+            document.body.style.overflow = '';
+        }
+
+        // Category filter functionality
+        function initCategoryFilter() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const workCards = document.querySelectorAll('.work-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.category;
+
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Filter cards
+                    workCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+
+                // Add keyboard support for category buttons
+                button.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        button.click();
+                    }
+                });
+            });
+        }
+
+        // Header scroll effect - Consistent with index.html
+        const header = document.querySelector('.header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links - Consistent with index.html
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    closeMobileMenu();
+                }
+            });
+        });
+
+        // Add fade-in animation to elements on scroll - Consistent with index.html
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.work-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add keyboard navigation for work cards
+        document.querySelectorAll('.work-card').forEach(card => {
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+
+            // Add click functionality for cards
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.category-btn')) {
+                    // Add your project detail page navigation here
+                    console.log('View project:', card.querySelector('h3').textContent);
+                    // Example: window.location.href = 'project-detail.html?id=' + card.dataset.id;
+                }
+            });
+        });
+
+        // Simple analytics - Consistent with index.html
+        if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            console.log('Analytics would be loaded in production');
+        }
+    </script>
+</body>
+</html>
