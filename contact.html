@@ -18,6 +18,9 @@
     <!-- Simple Emoji Favicon for Web Developer -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
 
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,7 +123,7 @@
 
         .logo-img {
             height: 40px;
-            width: 40px;
+            width: 40px; /* Fixed dimensions for better CLS */
             transition: var(--transition);
             border-radius: 8px;
             object-fit: cover;
@@ -188,6 +191,33 @@
             z-index: 1002;
         }
 
+        /* Icon Styles - Added from index.html */
+        .email-icon {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Font Awesome icon styling - Added from index.html */
+        .fa-instagram,
+        .fa-facebook-f,
+        .fa-twitter,
+        .fa-linkedin-in,
+        .fa-youtube,
+        .fa-github,
+        .fa-envelope,
+        .fa-map-marker-alt,
+        .fa-clock,
+        .fa-users {
+            font-size: 1.25rem;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
         /* Section Structure - Consistent with index.html */
         .section {
             padding: 8rem 2rem 4rem;
@@ -252,8 +282,10 @@
         .contact-info:hover,
         .contact-info:focus-within {
             border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .contact-info::before {
@@ -339,7 +371,7 @@
             font-size: 0.9rem;
         }
 
-        /* Social Media Links - Consistent with index.html */
+        /* Social Media Links - Updated to match index.html */
         .social-links {
             display: flex;
             justify-content: center;
@@ -370,10 +402,12 @@
             outline: none;
         }
 
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .social-link i {
+            font-size: 1.25rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Contact Form - Improved to match index.html */
@@ -389,8 +423,10 @@
         .contact-form:hover,
         .contact-form:focus-within {
             border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .contact-form::before {
@@ -601,8 +637,10 @@
         .faq-item:hover,
         .faq-item:focus-within {
             border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .faq-item::before {
@@ -647,10 +685,13 @@
             transition: var(--transition);
         }
 
-        .contact-cta:hover {
+        .contact-cta:hover,
+        .contact-cta:focus-within {
             border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .contact-cta h2 {
@@ -692,12 +733,6 @@
             color: var(--primary);
             text-decoration: underline;
             outline: none;
-        }
-
-        .email-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--primary-light);
         }
 
         /* Footer - Consistent with index.html */
@@ -820,6 +855,10 @@
                 height: 40px;
             }
 
+            .social-link i {
+                font-size: 1.1rem;
+            }
+
             .btn,
             .submit-btn {
                 width: 100%;
@@ -884,7 +923,7 @@
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                <img src="https://i.ibb.co/p6xj6T3W/ownaweb-logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
                 <span class="logo-text">OwnAWeb</span>
             </a>
 
@@ -905,11 +944,11 @@
         <section class="section fade-in">
             <div class="section-header">
                 <div class="agency-badge">
-                    <span>✨</span> Get in Touch
+                    <span><i class="fas fa-message"></i></span> Get in Touch
                 </div>
                 <h1 class="section-title">Let's Create Together</h1>
                 <p class="section-subtitle">
-                    Have a project in mind? We'd love to hear about it. Share your ideas and let's work together to bring your vision to life.
+                    Have a project in mind? I'd love to hear about it. Share your ideas and let's work together to bring your vision to life.
                 </p>
             </div>
 
@@ -920,24 +959,18 @@
 
                     <div class="contact-method" tabindex="0">
                         <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Email</h3>
                             <a href="mailto:ownaweb@hotmail.com">ownaweb@hotmail.com</a>
-                            <p>We typically respond within 24 hours</p>
+                            <p>I typically respond within 24 hours</p>
                         </div>
                     </div>
 
                     <div class="contact-method" tabindex="0">
                         <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Based in</h3>
@@ -948,10 +981,7 @@
 
                     <div class="contact-method" tabindex="0">
                         <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                            <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Availability</h3>
@@ -963,24 +993,19 @@
                     <!-- Social Media Links -->
                     <div class="social-links">
                         <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                            <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
+
                         <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
+                            <i class="fab fa-twitter"></i>
+
                         </a>
-                        <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
+                        <a href="https://whatsapp.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
@@ -1046,7 +1071,7 @@
 
                         <div class="form-group">
                             <label for="message" class="form-label">Project Details *</label>
-                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, goals, timeline, and what you're hoping to achieve..." required></textarea>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project, goals, timeline, and what you're hoping to achieve..." required></textarea>
                             <div class="error-message" id="messageError" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;"></div>
                         </div>
 
@@ -1079,7 +1104,7 @@
                 <div class="faq-grid">
                     <div class="faq-item" tabindex="0">
                         <h3>What's your typical process?</h3>
-                        <p>We start with understanding your goals and audience, then move to concepts, design, and revisions until we get it right. We maintain clear communication throughout.</p>
+                        <p>I start with understanding your goals and audience, then move to concepts, design, and revisions until I get it right. I maintain clear communication throughout.</p>
                     </div>
 
                     <div class="faq-item" tabindex="0">
@@ -1089,22 +1114,22 @@
 
                     <div class="faq-item" tabindex="0">
                         <h3>Do you work with international clients?</h3>
-                        <p>Yes, we work with clients worldwide. We're based in India but available for remote collaboration across all time zones with flexible communication schedules.</p>
+                        <p>Yes, I work with clients worldwide. We're based in India but available for remote collaboration across all time zones with flexible communication schedules.</p>
                     </div>
 
                     <div class="faq-item" tabindex="0">
                         <h3>What are your rates?</h3>
-                        <p>We work on a project basis. After discussing your needs, we'll provide a detailed quote with clear deliverables and timelines that fit your budget.</p>
+                        <p>I work on a project basis. After discussing your needs, I'll provide a detailed quote with clear deliverables and timelines that fit your budget.</p>
                     </div>
 
                     <div class="faq-item" tabindex="0">
                         <h3>What's included in your web design service?</h3>
-                        <p>Our web design packages typically include strategy, design, development, responsive implementation, basic SEO setup, and post-launch support for 30 days.</p>
+                        <p>My web design packages typically include strategy, design, development, responsive implementation, basic SEO setup, and post-launch support for 30 days.</p>
                     </div>
 
                     <div class="faq-item" tabindex="0">
                         <h3>Do you provide ongoing maintenance?</h3>
-                        <p>Yes, we offer maintenance plans to keep your website updated, secure, and performing optimally after launch.</p>
+                        <p>Yes, I offer maintenance plans to keep your website updated, secure, and performing optimally after launch.</p>
                     </div>
                 </div>
             </div>
@@ -1112,14 +1137,12 @@
 
         <!-- Contact CTA - Consistent with index.html -->
         <section class="section">
-            <div class="contact-cta fade-in">
+            <div class="contact-cta fade-in" tabindex="0">
                 <h2>Ready to Start Your Project?</h2>
-                <p>Let's schedule a call to discuss your ideas and how we can help bring them to life.</p>
+                <p>Let's schedule a call to discuss your ideas and how I can help bring them to life.</p>
 
                 <div class="contact-info-inline">
-                    <svg class="email-icon" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
+                    <i class="fas fa-envelope email-icon"></i>
                     <a href="mailto:ownaweb@hotmail.com">ownaweb@hotmail.com</a>
                 </div>
 
@@ -1135,43 +1158,28 @@
         <div class="footer-content">
             <div class="nav-container" style="justify-content: center; margin-bottom: 2rem;">
                 <a href="index.html" class="logo">
-                    <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                    <img src="https://i.ibb.co/p6xj6T3W/ownaweb-logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
                     <span class="logo-text">OwnAWeb</span>
                 </a>
             </div>
 
-            <!-- Social Media Links -->
+            <!-- Social Media Links with Font Awesome -->
             <div class="social-links">
                 <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                </a>
-                <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                    </svg>
-                </a>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+
+                        </a>
+                        <a href="https://whatsapp.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
             </div>
 
             <p>© 2026 OwnAWeb. All rights reserved.</p>
@@ -1189,6 +1197,9 @@
 
             // Initialize mobile menu
             initMobileMenu();
+
+            // Initialize animations
+            initAnimations();
         });
 
         // Initialize mobile menu functionality - Consistent with index.html
@@ -1246,11 +1257,11 @@
             if (navLinks.classList.contains('active')) {
                 mobileToggle.textContent = '✕';
                 mobileToggle.setAttribute('aria-label', 'Close menu');
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
             } else {
                 mobileToggle.textContent = '☰';
                 mobileToggle.setAttribute('aria-label', 'Open menu');
-                document.body.style.overflow = '';
+                document.body.style.overflow = ''; // Restore scrolling
             }
         }
 
@@ -1262,7 +1273,7 @@
             navLinks.classList.remove('active');
             mobileToggle.textContent = '☰';
             mobileToggle.setAttribute('aria-label', 'Open menu');
-            document.body.style.overflow = '';
+            document.body.style.overflow = ''; // Restore scrolling
         }
 
         // Header scroll effect - Consistent with index.html
@@ -1297,6 +1308,23 @@
                 }
             });
         });
+
+        // Initialize animations
+        function initAnimations() {
+            // Add fade-in animation to elements on scroll - Consistent with index.html
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe all content sections
+            document.querySelectorAll('.contact-info, .contact-form, .faq-item, .contact-cta').forEach(el => {
+                observer.observe(el);
+            });
+        }
 
         // Form handling
         const contactForm = document.getElementById('contactForm');
@@ -1395,18 +1423,15 @@
             });
         });
 
-        // Add fade-in animation to elements on scroll - Consistent with index.html
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+        // Add keyboard navigation for FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    // Handle FAQ item click
+                    console.log('FAQ selected:', item.querySelector('h3').textContent);
                 }
             });
-        }, { threshold: 0.1 });
-
-        // Observe all content sections
-        document.querySelectorAll('.contact-info, .contact-form, .faq-item, .contact-cta').forEach(el => {
-            observer.observe(el);
         });
 
         // Simple analytics - Consistent with index.html

@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | OwnAWeb | Web Designer Agency</title>
+    <title>About | OwnAWeb | Web Designer & Developer</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Learn about OwnAWeb's design philosophy, expertise, and approach to creating beautiful digital experiences for clients worldwide.">
-    <meta name="keywords" content="web design agency about, design philosophy, agency expertise, creative process, OwnAWeb team">
+    <meta name="description" content="Learn about my approach to web design, my expertise in frontend development, and how I create beautiful, functional websites with clean code.">
+    <meta name="keywords" content="web designer about, web developer portfolio, frontend developer, custom web design, responsive websites">
     <meta name="author" content="OwnAWeb">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="About Us | OwnAWeb Web Designer Agency">
-    <meta property="og:description" content="Discover our approach to design, our expertise, and what makes us different in creating digital experiences.">
+    <meta property="og:title" content="About | OwnAWeb Web Designer & Developer">
+    <meta property="og:description" content="Discover my approach to web design, development expertise, and what makes my work different in creating digital experiences.">
     <meta property="og:type" content="website">
 
     <!-- Simple Emoji Favicon for Web Developer -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,7 +123,7 @@
 
         .logo-img {
             height: 40px;
-            width: 40px;
+            width: 40px; /* Fixed dimensions for better CLS */
             transition: var(--transition);
             border-radius: 8px;
             object-fit: cover;
@@ -188,6 +191,31 @@
             z-index: 1002;
         }
 
+        /* Icon Styles - Added from index.html */
+        .email-icon {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Font Awesome icon styling - Added from index.html */
+        .fa-instagram,
+        .fa-facebook-f,
+        .fa-twitter,
+        .fa-linkedin-in,
+        .fa-youtube,
+        .fa-github,
+        .fa-envelope,
+        .fa-users {
+            font-size: 1.25rem;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
         /* Section Structure - Consistent with index.html */
         .section {
             padding: 8rem 2rem 4rem;
@@ -232,19 +260,11 @@
 
         /* About Hero */
         .about-hero {
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 400px;
             gap: 4rem;
+            align-items: center;
             margin-bottom: 6rem;
-        }
-
-        .about-hero-content {
-            flex: 1;
-        }
-
-        .about-hero-image {
-            flex: 0 0 400px;
-            position: relative;
         }
 
         .hero-image-container {
@@ -267,14 +287,7 @@
             transform: scale(1.05);
         }
 
-        /* About Grid */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 6rem;
-        }
-
+        /* About Content */
         .about-content h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
@@ -288,20 +301,23 @@
             line-height: 1.8;
         }
 
-        /* Skills Section - Improved to match index.html cards */
+        /* Skills Section */
         .skills-section {
             background: var(--card);
             padding: 2.5rem;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
+            position: relative;
         }
 
         .skills-section:hover,
         .skills-section:focus-within {
             border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .skills-section::before {
@@ -365,7 +381,7 @@
             outline: none;
         }
 
-        /* Timeline - Improved to match index.html */
+        /* Timeline */
         .timeline {
             margin-bottom: 6rem;
         }
@@ -394,6 +410,8 @@
             border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .timeline-item::before {
@@ -431,7 +449,7 @@
             line-height: 1.7;
         }
 
-        /* Philosophy - Improved to match index.html contact section */
+        /* Philosophy */
         .philosophy {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
             border-radius: 24px;
@@ -448,6 +466,8 @@
             border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
+            outline: 2px solid var(--primary-light);
+            outline-offset: 4px;
         }
 
         .philosophy h2 {
@@ -466,7 +486,106 @@
             text-align: center;
         }
 
-        /* Buttons - Consistent with index.html */
+        /* Development Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .principle-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .principle-card h3 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .principle-card h3 i {
+            font-size: 1.1rem;
+        }
+
+        .principle-card p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Approach Grid */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .approach-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .approach-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .approach-card h3 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -511,7 +630,14 @@
             background: transparent;
         }
 
-        /* Contact Section - Consistent with index.html */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
             border-radius: 24px;
@@ -563,13 +689,7 @@
             outline: none;
         }
 
-        .email-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--primary-light);
-        }
-
-        /* Social Media Links - Consistent with index.html */
+        /* Social Media Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -600,13 +720,15 @@
             outline: none;
         }
 
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .social-link i {
+            font-size: 1.25rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Footer - Consistent with index.html */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 4rem 2rem;
@@ -624,7 +746,7 @@
             margin-top: 1rem;
         }
 
-        /* Mobile Styles - Consistent with index.html */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -690,25 +812,9 @@
             }
 
             .about-hero {
-                flex-direction: column;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .about-hero-image {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .about-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
-            }
-
-            .skills-section {
-                padding: 2rem;
+                text-align: center;
             }
 
             .philosophy {
@@ -721,10 +827,22 @@
                 margin: 1rem auto;
             }
 
+            .principles-grid,
+            .approach-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .btn {
                 width: 100%;
                 justify-content: center;
                 max-width: 300px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
             }
 
             .contact-info {
@@ -740,9 +858,13 @@
                 width: 40px;
                 height: 40px;
             }
+
+            .social-link i {
+                font-size: 1.1rem;
+            }
         }
 
-        /* Animations - Consistent with index.html */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -772,7 +894,9 @@
             .philosophy:hover,
             .philosophy:focus-within,
             .skill-tag:hover,
-            .social-link:hover {
+            .social-link:hover,
+            .principle-card:hover,
+            .approach-card:hover {
                 transform: none;
             }
 
@@ -794,7 +918,7 @@
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                <img src="https://i.ibb.co/p6xj6T3W/ownaweb-logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
                 <span class="logo-text">OwnAWeb</span>
             </a>
 
@@ -815,92 +939,110 @@
         <section class="section fade-in">
             <div class="section-header">
                 <div class="agency-badge">
-                    <span>✨</span> About Our Agency
+                    <span><i class="fas fa-user"></i></span> About Me
                 </div>
-                <h1 class="section-title">Crafting Digital Experiences</h1>
-                <p class="section-subtitle">We're a passionate team of designers and developers dedicated to creating beautiful, functional digital solutions that help brands connect with their audience.</p>
+                <h1 class="section-title">Web Designer & Developer</h1>
+                <p class="section-subtitle">I specialize in creating beautiful, functional websites with clean code and modern design principles. Every project is crafted with attention to detail and user experience.</p>
             </div>
 
             <div class="about-hero">
-                <div class="about-hero-content">
-                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; color: var(--light);">Our Story</h2>
-                    <p style="color: var(--gray-light); margin-bottom: 1.5rem; line-height: 1.8;">
-                        Founded with a passion for exceptional design and user experience, OwnAWeb has grown from a solo venture into a collaborative agency that partners with businesses to bring their digital visions to life.
+                <div class="about-content">
+                    <h2>My Journey in Web Development</h2>
+                    <p>
+                        As a passionate web designer and developer, I focus on creating digital experiences that combine aesthetic appeal with technical excellence. My journey began with a fascination for how design and code come together to create meaningful online experiences.
                     </p>
-                    <p style="color: var(--gray-light); margin-bottom: 1.5rem; line-height: 1.8;">
-                        We believe that great design goes beyond aesthetics—it solves problems, tells stories, and creates meaningful connections between brands and their audiences.
+                    <p>
+                        Over the years, I've honed my skills in both design and development, understanding that great websites require a balance of beautiful visuals and solid, maintainable code. I believe in creating work that not only looks exceptional but performs flawlessly across all devices.
                     </p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+
+                    <div class="stats-grid">
+                        <div class="stat-card fade-in">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
                         <a href="work.html" class="btn">
-                            View Our Work
-                            <span>→</span>
+                            <i class="fas fa-eye"></i> View My Work
                         </a>
                         <a href="contact.html" class="btn btn-secondary">
-                            Get in Touch
+                            <i class="fas fa-paper-plane"></i> Get in Touch
                         </a>
                     </div>
                 </div>
 
-                <div class="about-hero-image">
-                    <div class="hero-image-container">
-                        <!-- Replace with your team/agency image -->
-                        <img src="https://www.avocor.com/wp-content/uploads/2018/09/7-examples-of-teamwork-collaboration-in-the-workplace-featured-image.png" alt="OwnAWeb team collaborating on design project" loading="lazy">
-                    </div>
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Web development workspace with code editor and design mockups" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- Our Approach Section -->
+        <!-- Expertise Section -->
         <section class="section">
-            <div class="about-grid">
-                <div class="about-content fade-in">
-                    <h2>Our Design Philosophy</h2>
-                    <p>
-                        We approach every project with a focus on clarity, purpose, and user-centered design. Our process begins with understanding your goals, your audience, and your unique challenges.
-                    </p>
-                    <p>
-                        We believe that good design should be invisible—it shouldn't draw attention to itself, but rather seamlessly guide users toward their goals while reflecting your brand's identity and values.
-                    </p>
-                    <p>
-                        Every project is an opportunity to create something meaningful—whether it's helping a business grow, solving a user's problem, or creating a moment of delight.
-                    </p>
+            <div class="section-header">
+                <h2 class="section-title">My Expertise</h2>
+                <p class="section-subtitle">Combining design sensibility with technical proficiency</p>
+            </div>
+
+            <div class="skills-section fade-in" tabindex="0">
+                <div class="skill-category">
+                    <h3>Core Services</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" tabindex="0">Custom Web Design</span>
+                        <span class="skill-tag" tabindex="0">Frontend Development</span>
+                        <span class="skill-tag" tabindex="0">UI/UX Design</span>
+                        <span class="skill-tag" tabindex="0">Responsive Design</span>
+                        <span class="skill-tag" tabindex="0">E-commerce Websites</span>
+                        <span class="skill-tag" tabindex="0">Website Redesign</span>
+                    </div>
                 </div>
 
-                <div class="skills-section fade-in" tabindex="0">
-                    <h2>Our Expertise</h2>
-
-                    <div class="skill-category">
-                        <h3>Core Services</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag" tabindex="0">Web Design</span>
-                            <span class="skill-tag" tabindex="0">UI/UX Design</span>
-                            <span class="skill-tag" tabindex="0">Brand Identity</span>
-                            <span class="skill-tag" tabindex="0">Digital Strategy</span>
-                            <span class="skill-tag" tabindex="0">E-commerce</span>
-                        </div>
+                <div class="skill-category">
+                    <h3>Development Stack</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" tabindex="0">HTML5/CSS3</span>
+                        <span class="skill-tag" tabindex="0">JavaScript</span>
+                        <span class="skill-tag" tabindex="0">Responsive Design</span>
+                        <span class="skill-tag" tabindex="0">Figma/Adobe XD</span>
+                        <span class="skill-tag" tabindex="0">Git & Version Control</span>
+                        <span class="skill-tag" tabindex="0">Performance Optimization</span>
                     </div>
+                </div>
 
-                    <div class="skill-category">
-                        <h3>Technologies</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag" tabindex="0">Figma</span>
-                            <span class="skill-tag" tabindex="0">Adobe Creative</span>
-                            <span class="skill-tag" tabindex="0">Responsive Design</span>
-                            <span class="skill-tag" tabindex="0">Prototyping</span>
-                            <span class="skill-tag" tabindex="0">Wireframing</span>
-                        </div>
+                <div class="skill-category">
+                    <h3>Key Strengths</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" tabindex="0">Creative Strategy</span>
+                        <span class="skill-tag" tabindex="0">User Research</span>
+                        <span class="skill-tag" tabindex="0">Visual Systems</span>
+                        <span class="skill-tag" tabindex="0">Clean Code Architecture</span>
+                        <span class="skill-tag" tabindex="0">Project Management</span>
+                        <span class="skill-tag" tabindex="0">Cross-Browser Compatibility</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="skill-category">
-                        <h3>Our Strengths</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag" tabindex="0">Creative Strategy</span>
-                            <span class="skill-tag" tabindex="0">User Research</span>
-                            <span class="skill-tag" tabindex="0">Visual Systems</span>
-                            <span class="skill-tag" tabindex="0">Collaboration</span>
-                            <span class="skill-tag" tabindex="0">Project Management</span>
-                        </div>
-                    </div>
+            <div class="approach-grid">
+                <div class="approach-card fade-in">
+                    <h3>Design First</h3>
+                    <p>Starting with user-centered design principles to create intuitive, engaging interfaces that guide users effectively.</p>
+                </div>
+                <div class="approach-card fade-in">
+                    <h3>Development Excellence</h3>
+                    <p>Writing clean, semantic code that's performant, accessible, and easy to maintain for long-term success.</p>
+                </div>
+                <div class="approach-card fade-in">
+                    <h3>Collaborative Process</h3>
+                    <p>Working closely with clients throughout the project to ensure the final product exceeds expectations.</p>
                 </div>
             </div>
         </section>
@@ -909,119 +1051,114 @@
         <section class="section">
             <div class="timeline fade-in">
                 <div class="section-header">
-                    <h2 class="section-title">Our Journey</h2>
-                    <p class="section-subtitle">From our beginnings to where we are today</p>
+                    <h2 class="section-title">Professional Journey</h2>
+                    <p class="section-subtitle">My path in web design and development</p>
                 </div>
 
                 <div class="timeline-item" tabindex="0">
                     <div class="timeline-date">2022 - Present</div>
                     <div class="timeline-content">
-                        <h3>Agency Growth & Expansion</h3>
-                        <p>Expanded our team and services to become a full-service digital agency. Working with international clients across various industries to create comprehensive digital solutions.</p>
+                        <h3>Advanced Web Development Focus</h3>
+                        <p>Specializing in performance-optimized, responsive websites using modern technologies. Working with international clients to create custom web solutions that drive business results.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item" tabindex="0">
                     <div class="timeline-date">2020 - 2022</div>
                     <div class="timeline-content">
-                        <h3>Building Our Foundation</h3>
-                        <p>Established our core design philosophy and processes. Developed partnerships with local businesses and startups, helping them establish their digital presence.</p>
+                        <h3>Skill Expansion & Specialization</h3>
+                        <p>Mastering advanced CSS techniques, JavaScript frameworks, and responsive design patterns. Developed comprehensive web solutions for diverse industries and client needs.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item" tabindex="0">
                     <div class="timeline-date">2018 - 2020</div>
                     <div class="timeline-content">
-                        <h3>Humble Beginnings</h3>
-                        <p>Started as a solo design studio focused on creating beautiful, functional websites. Learned the fundamentals of visual communication and digital design principles.</p>
+                        <h3>Foundational Development Years</h3>
+                        <p>Building expertise in core web technologies, design principles, and client communication. Established workflows and processes for efficient project delivery.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Philosophy Section -->
+        <!-- Philosophy & Principles Section -->
         <section class="section">
             <div class="philosophy fade-in" tabindex="0">
-                <h2>Why We Do What We Do</h2>
+                <h2>My Design & Development Philosophy</h2>
                 <p>
-                    In a digital world filled with noise, we believe in creating work that matters—design that's not just beautiful, but meaningful, functional, and results-driven.
+                    I believe great websites are born from the perfect marriage of design and development. Every pixel and line of code should serve a purpose—whether it's guiding users, communicating brand values, or driving conversions.
                 </p>
                 <p>
-                    We're passionate about helping businesses tell their stories through thoughtful design, creating experiences that resonate with users and drive real business outcomes.
+                    My approach combines aesthetic sensibility with technical rigor, ensuring that websites not only look beautiful but perform exceptionally across all devices and browsers.
                 </p>
-                <p>
-                    Our mission is simple: to help brands thrive in the digital space by creating exceptional experiences that connect, engage, and inspire.
-                </p>
+
+                <div class="principles-grid">
+                    <div class="principle-card fade-in">
+                        <h3><i class="fas fa-code"></i> Clean Code</h3>
+                        <p>Semantic HTML, organized CSS architecture, and efficient JavaScript for maintainable, scalable websites that stand the test of time.</p>
+                    </div>
+                    <div class="principle-card fade-in">
+                        <h3><i class="fas fa-tachometer-alt"></i> Performance First</h3>
+                        <p>Optimized loading strategies, Core Web Vitals compliance, and mobile-first responsive design for superior user experience.</p>
+                    </div>
+                    <div class="principle-card fade-in">
+                        <h3><i class="fas fa-users"></i> User-Centered</h3>
+                        <p>Design that prioritizes user needs, accessibility standards, and intuitive navigation for maximum engagement and conversion.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section - Consistent with index.html -->
+        <!-- Contact Section -->
         <section class="section">
-            <div class="contact">
-                <h2>Ready to Create Something Amazing?</h2>
-                <p>Let's collaborate to bring your vision to life. Share your ideas and we'll help you transform them into reality.</p>
+            <div class="contact fade-in">
+                <h2>Ready to Build Something Exceptional?</h2>
+                <p>Let's collaborate to create a website that perfectly represents your brand and achieves your business goals. I'll work with you to understand your vision and translate it into a stunning, functional website.</p>
 
                 <div class="contact-info">
-                    <svg class="email-icon" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
+                    <i class="fas fa-envelope email-icon"></i>
                     <a href="mailto:ownaweb@hotmail.com">ownaweb@hotmail.com</a>
                 </div>
 
                 <div style="margin-top: 3rem;">
-                    <a href="contact.html" class="btn">Start a Conversation</a>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-comment"></i> Start a Project Discussion
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer - Consistent with index.html -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="nav-container" style="justify-content: center; margin-bottom: 2rem;">
                 <a href="index.html" class="logo">
-                    <img src="logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
+                    <img src="https://i.ibb.co/p6xj6T3W/ownaweb-logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
                     <span class="logo-text">OwnAWeb</span>
                 </a>
             </div>
 
             <!-- Social Media Links -->
             <div class="social-links">
-                <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
+                <!-- CHANGED: Added portfolio-relevant social platforms -->
+                <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
+                <a href="https://twitter.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
+                <a href="https://dribbble.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                    </svg>
+                <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
 
             <p>© 2026 OwnAWeb. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--gray);">
-                Follow us on social media for updates and insights
+                Crafting exceptional web experiences with clean code and modern design
             </p>
         </div>
     </footer>
@@ -1034,9 +1171,12 @@
 
             // Initialize mobile menu
             initMobileMenu();
+
+            // Initialize animations
+            initAnimations();
         });
 
-        // Initialize mobile menu functionality - Consistent with index.html
+        // Initialize mobile menu functionality
         function initMobileMenu() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -1110,7 +1250,7 @@
             document.body.style.overflow = '';
         }
 
-        // Header scroll effect - Consistent with index.html
+        // Header scroll effect
         const header = document.querySelector('.header');
         if (header) {
             window.addEventListener('scroll', () => {
@@ -1122,7 +1262,7 @@
             });
         }
 
-        // Smooth scroll for anchor links - Consistent with index.html
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -1143,7 +1283,24 @@
             });
         });
 
-        // Add interactive effect to skill tags with keyboard support
+        // Initialize animations
+        function initAnimations() {
+            // Add fade-in animation to elements on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe all content sections
+            document.querySelectorAll('.about-content, .skills-section, .approach-card, .timeline-item, .philosophy, .contact, .principle-card, .stat-card').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Add interactive effect to skill tags
         document.querySelectorAll('.skill-tag').forEach(tag => {
             tag.addEventListener('mouseenter', () => {
                 tag.style.transform = 'translateY(-4px)';
@@ -1161,7 +1318,6 @@
                 tag.style.transform = 'translateY(0)';
             });
 
-            // Keyboard support for skill tags
             tag.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -1170,31 +1326,7 @@
             });
         });
 
-        // Add keyboard navigation for timeline items
-        document.querySelectorAll('.timeline-item, .skills-section, .philosophy').forEach(item => {
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    item.click();
-                }
-            });
-        });
-
-        // Add fade-in animation to elements on scroll - Consistent with index.html
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Observe all content sections
-        document.querySelectorAll('.about-hero-content, .about-content, .skills-section, .timeline-item, .philosophy, .contact').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Simple analytics - Consistent with index.html
+        // Simple analytics
         if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
             console.log('Analytics would be loaded in production');
         }
