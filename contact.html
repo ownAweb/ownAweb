@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | OwnAWeb | Web Designer Agency</title>
+    <title>Contact | Mahmood HM | Web Designer & Developer</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Contact OwnAWeb for your web design projects. Get in touch via email or send a message. Based in India, available for remote work worldwide.">
-    <meta name="keywords" content="contact web design agency, hire designers, project inquiry, OwnAWeb contact, digital agency contact">
-    <meta name="author" content="OwnAWeb">
+    <meta name="description" content="Contact Mahmood HM for your web design and development projects. Get in touch via email or send a message. Based in India, available for remote work worldwide.">
+    <meta name="keywords" content="contact web designer, hire web developer, project inquiry, Mahmood HM contact, web development contact">
+    <meta name="author" content="Mahmood HM">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Contact Us | OwnAWeb Web Designer Agency">
-    <meta property="og:description" content="Let's work together on your next digital project. Send us a message and let's start a conversation.">
+    <meta property="og:title" content="Contact | Mahmood HM - Web Designer & Developer">
+    <meta property="og:description" content="Let's work together on your next digital project. Send a message and let's start a conversation.">
     <meta property="og:type" content="website">
 
     <!-- Simple Emoji Favicon for Web Developer -->
@@ -30,6 +30,7 @@
     </noscript>
 
     <style>
+        /* HOME PAGE STYLES APPLIED HERE */
         /* Prevent FOUC */
         html {
             visibility: hidden;
@@ -37,18 +38,20 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --gray-lighter: #f1f5f9;
-            --card: #1e293b;
+            /* White theme - matching index.html */
+            --primary: #ffffff;
+            --primary-light: #f5f5f5;
+            --primary-dark: #cccccc;
+            --secondary: #e6e6e6;
+            --dark: #0a0c0b;
+            --darker: #030504;
+            --light: #f0fdf4;
+            --gray: #9ca3af;
+            --gray-light: #d1d5db;
+            --gray-lighter: #e5e7eb;
+            --card: #1c231f;
             --transition: all 0.3s ease;
+            --glow-white: 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
         * {
@@ -63,11 +66,13 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            /* deep dark gradient with white influence - matching index.html */
+            background: linear-gradient(145deg, #0f120f 0%, #1a241a 50%, #0b1a0b 100%);
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
         }
 
         /* Skip to main content for accessibility */
@@ -76,33 +81,34 @@
             top: -40px;
             left: 0;
             background: var(--primary);
-            color: white;
+            color: var(--darker);
             padding: 8px;
             z-index: 1001;
             text-decoration: none;
             border-radius: 0 0 4px 0;
+            font-weight: 600;
         }
 
         .skip-to-content:focus {
             top: 0;
         }
 
-        /* Header & Navigation - Consistent with index.html */
+        /* Header - TRANSPARENT LIKE INDEX.HTML */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.92);
+            background: rgba(3, 5, 4, 0.6);
             backdrop-filter: blur(12px);
             z-index: 1000;
             padding: 1.2rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
         }
 
         .header.scrolled {
             padding: 0.8rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .nav-container {
@@ -123,10 +129,11 @@
 
         .logo-img {
             height: 40px;
-            width: 40px; /* Fixed dimensions for better CLS */
+            width: 40px;
             transition: var(--transition);
             border-radius: 8px;
             object-fit: cover;
+            filter: brightness(1.1) saturate(1.2);
         }
 
         .logo:hover .logo-img {
@@ -160,7 +167,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-light);
+            color: var(--gray-light);
         }
 
         .nav-links a.active {
@@ -177,6 +184,7 @@
             height: 2px;
             background: var(--primary);
             border-radius: 2px;
+            box-shadow: 0 0 8px var(--primary);
         }
 
         .mobile-toggle {
@@ -191,9 +199,9 @@
             z-index: 1002;
         }
 
-        /* Icon Styles - Added from index.html */
+        /* Icon Styles */
         .email-icon {
-            color: var(--primary-light);
+            color: var(--primary);
             font-size: 1.25rem;
             width: 20px;
             height: 20px;
@@ -202,7 +210,7 @@
             justify-content: center;
         }
 
-        /* Font Awesome icon styling - Added from index.html */
+        /* Font Awesome icon styling */
         .fa-instagram,
         .fa-facebook-f,
         .fa-twitter,
@@ -218,11 +226,13 @@
             transition: var(--transition);
         }
 
-        /* Section Structure - Consistent with index.html */
+        /* Main Content Sections */
         .section {
             padding: 8rem 2rem 4rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 10;
         }
 
         .section-header {
@@ -232,7 +242,7 @@
 
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 4vw, 3rem);
             font-weight: 600;
             margin-bottom: 1.5rem;
             color: var(--light);
@@ -246,19 +256,21 @@
             line-height: 1.7;
         }
 
-        /* Agency Badge - From index.html */
-        .agency-badge {
+        /* Badge - matching index.html web-dev-badge */
+        .contact-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: var(--primary-light);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: var(--primary);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         /* Contact Grid */
@@ -269,21 +281,21 @@
             margin-bottom: 6rem;
         }
 
-        /* Contact Info - Improved to match index.html cards */
+        /* Contact Info - matching index.html cards */
         .contact-info {
             background: var(--card);
             padding: 2.5rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
             position: relative;
         }
 
         .contact-info:hover,
         .contact-info:focus-within {
-            border-color: var(--primary);
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             outline: 2px solid var(--primary-light);
             outline-offset: 4px;
         }
@@ -300,9 +312,8 @@
             transition: var(--transition);
         }
 
-        .contact-info:hover::before,
-        .contact-info:focus-within::before {
-            opacity: 1;
+        .contact-info:hover::before {
+            opacity: 0;
         }
 
         .contact-info h2 {
@@ -329,14 +340,15 @@
         .contact-method:focus-within {
             border-color: var(--primary);
             transform: translateX(10px);
-            background: rgba(37, 99, 235, 0.05);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             outline: none;
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -344,6 +356,7 @@
             font-size: 1.5rem;
             color: var(--primary);
             flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-details h3 {
@@ -353,7 +366,7 @@
         }
 
         .contact-details a {
-            color: var(--primary-light);
+            color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -363,6 +376,7 @@
         .contact-details a:focus {
             color: var(--primary);
             text-decoration: underline;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
             outline: none;
         }
 
@@ -371,7 +385,7 @@
             font-size: 0.9rem;
         }
 
-        /* Social Media Links - Updated to match index.html */
+        /* Social Media Links - matching index.html */
         .social-links {
             display: flex;
             justify-content: center;
@@ -386,19 +400,19 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             color: var(--gray-light);
             text-decoration: none;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .social-link:hover,
         .social-link:focus {
-            background: var(--primary);
-            color: white;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--gray-light);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
             outline: none;
         }
 
@@ -410,21 +424,21 @@
             justify-content: center;
         }
 
-        /* Contact Form - Improved to match index.html */
+        /* Contact Form - matching index.html */
         .contact-form {
             background: var(--card);
             padding: 2.5rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
             position: relative;
         }
 
         .contact-form:hover,
         .contact-form:focus-within {
-            border-color: var(--primary);
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             outline: 2px solid var(--primary-light);
             outline-offset: 4px;
         }
@@ -441,9 +455,8 @@
             transition: var(--transition);
         }
 
-        .contact-form:hover::before,
-        .contact-form:focus-within::before {
-            opacity: 1;
+        .contact-form:hover::before {
+            opacity: 0;
         }
 
         .contact-form h2 {
@@ -470,7 +483,7 @@
             width: 100%;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             color: var(--light);
             font-family: inherit;
@@ -483,7 +496,7 @@
         .form-textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.08);
         }
 
@@ -494,20 +507,20 @@
 
         .form-select {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 1.5rem;
         }
 
-        /* Buttons - Consistent with index.html */
+        /* Buttons - matching index.html */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
             padding: 1rem 2.5rem;
             background: var(--primary);
-            color: white;
+            color: var(--darker);
             text-decoration: none;
             border-radius: 10px;
             font-weight: 600;
@@ -515,15 +528,16 @@
             border: 2px solid transparent;
             transition: var(--transition);
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .btn:hover,
         .btn:focus {
-            background: transparent;
-            border-color: var(--primary);
-            color: var(--primary);
+            background: var(--primary);
+            border-color: transparent;
+            color: var(--darker);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
             outline: none;
         }
 
@@ -540,7 +554,7 @@
             width: 100%;
             padding: 1.2rem;
             background: var(--primary);
-            color: white;
+            color: var(--darker);
             border: 2px solid transparent;
             border-radius: 10px;
             font-weight: 600;
@@ -548,15 +562,16 @@
             cursor: pointer;
             transition: var(--transition);
             font-family: inherit;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .submit-btn:hover:not(:disabled),
         .submit-btn:focus:not(:disabled) {
-            background: transparent;
-            border-color: var(--primary);
-            color: var(--primary);
+            background: var(--primary);
+            border-color: transparent;
+            color: var(--darker);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
             outline: none;
         }
 
@@ -575,14 +590,22 @@
             display: none;
             width: 20px;
             height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(0, 0, 0, 0.3);
             border-radius: 50%;
-            border-top-color: white;
+            border-top-color: var(--darker);
             animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        /* Error Message */
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
         }
 
         /* Success Message */
@@ -606,39 +629,37 @@
             margin: 0;
         }
 
-        /* FAQ Section - Improved to match index.html cards */
-        .faq-section {
-            margin-top: 6rem;
+        .success-message a {
+            color: var(--primary);
+            text-decoration: underline;
         }
 
-        .faq-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--light);
-            text-align: center;
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 6rem;
         }
 
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .faq-item {
             background: var(--card);
             padding: 2rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
             position: relative;
         }
 
         .faq-item:hover,
         .faq-item:focus-within {
-            border-color: var(--primary);
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             outline: 2px solid var(--primary-light);
             outline-offset: 4px;
         }
@@ -655,9 +676,8 @@
             transition: var(--transition);
         }
 
-        .faq-item:hover::before,
-        .faq-item:focus-within::before {
-            opacity: 1;
+        .faq-item:hover::before {
+            opacity: 0;
         }
 
         .faq-item h3 {
@@ -673,23 +693,24 @@
             line-height: 1.6;
         }
 
-        /* Contact Call-to-Action - Consistent with index.html */
+        /* Contact Call-to-Action */
         .contact-cta {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            background: linear-gradient(145deg, rgba(28, 35, 31, 0.9) 0%, rgba(10, 20, 8, 0.95) 100%);
             border-radius: 24px;
             padding: 4rem;
             margin: 2rem auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             max-width: 800px;
             text-align: center;
             transition: var(--transition);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .contact-cta:hover,
         .contact-cta:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             outline: 2px solid var(--primary-light);
             outline-offset: 4px;
         }
@@ -714,15 +735,15 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             margin-top: 2rem;
         }
 
         .contact-info-inline a {
-            color: var(--primary-light);
+            color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -735,13 +756,16 @@
             outline: none;
         }
 
-        /* Footer - Consistent with index.html */
+        /* Footer - matching index.html */
         .footer {
             text-align: center;
             padding: 4rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--gray);
             font-size: 0.9rem;
+            background: rgba(3, 5, 4, 0.6);
+            position: relative;
+            z-index: 10;
         }
 
         .footer-content {
@@ -753,7 +777,75 @@
             margin-top: 1rem;
         }
 
-        /* Mobile Styles - Consistent with index.html */
+        /* Cosmic Elements - matching index.html */
+        .moon {
+            position: fixed;
+            top: 120px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #f8f4e6, #e8dfce);
+            border-radius: 50%;
+            box-shadow: 0 0 80px rgba(255, 255, 220, 0.9), 0 0 150px rgba(255, 255, 255, 0.6);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.95;
+        }
+
+        .star {
+            position: fixed;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #ffffff, 0 0 20px rgba(255,255,200,0.6);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        .fa-cloud {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.4);
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+            z-index: 0;
+            pointer-events: none;
+            font-size: 6rem;
+            opacity: 0.5;
+            animation: drift linear infinite;
+        }
+
+        .fa-cloud-1 {
+            top: 15%;
+            left: -150px;
+            font-size: 8rem;
+            animation-duration: 140s;
+        }
+        .fa-cloud-2 {
+            top: 45%;
+            left: -200px;
+            font-size: 10rem;
+            animation-duration: 180s;
+            animation-delay: -30s;
+        }
+        .fa-cloud-3 {
+            top: 75%;
+            left: -100px;
+            font-size: 7rem;
+            animation-duration: 120s;
+            animation-delay: -60s;
+        }
+
+        @keyframes drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 300px)); }
+        }
+
+        /* Mobile Styles - matching index.html */
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -765,7 +857,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(15, 23, 42, 0.98);
+                background: rgba(10, 20, 8, 0.98);
                 backdrop-filter: blur(12px);
                 flex-direction: column;
                 padding: 6rem 2rem 2rem;
@@ -774,7 +866,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: var(--transition);
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
                 z-index: 1001;
                 width: 280px;
                 height: 100vh;
@@ -796,17 +888,17 @@
                 padding: 1rem;
                 border-radius: 8px;
                 font-size: 1.1rem;
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
                 background: rgba(255, 255, 255, 0.05);
             }
 
             .nav-links a:hover {
-                background: rgba(37, 99, 235, 0.1);
-                border-color: var(--primary);
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(255, 255, 255, 0.2);
             }
 
             .nav-links a.active {
-                background: rgba(37, 99, 235, 0.15);
+                background: rgba(255, 255, 255, 0.2);
                 border-color: var(--primary);
             }
 
@@ -865,9 +957,20 @@
                 justify-content: center;
                 max-width: 300px;
             }
+
+            .moon {
+                width: 70px;
+                height: 70px;
+                top: 80px;
+                right: 20px;
+            }
+
+            .fa-cloud-1 { font-size: 5rem; top: 10%; left: -100px; }
+            .fa-cloud-2 { font-size: 6rem; top: 40%; left: -150px; }
+            .fa-cloud-3 { font-size: 4rem; top: 70%; left: -80px; }
         }
 
-        /* Animations - Consistent with index.html */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -900,8 +1003,9 @@
             .contact-method:focus-within,
             .faq-item:hover,
             .faq-item:focus-within,
-            .social-link:hover,
-            .social-link:focus {
+            .contact-cta:hover,
+            .contact-cta:focus-within,
+            .social-link:hover {
                 transform: none;
             }
 
@@ -912,22 +1016,35 @@
             .loading-spinner {
                 animation: none;
             }
+
+            .fa-cloud,
+            .star {
+                animation: none;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Cosmic background elements - matching index.html -->
+    <div class="moon"></div>
+
+    <!-- Font Awesome cloud icons -->
+    <i class="fas fa-cloud fa-cloud-1"></i>
+    <i class="fas fa-cloud fa-cloud-2"></i>
+    <i class="fas fa-cloud fa-cloud-3"></i>
+
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Header - Consistent with index.html -->
+    <!-- Header - matching index.html -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="https://i.ibb.co/mFMQbqZh/logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
-                <span class="logo-text">OwnAWeb</span>
+                <span class="logo-text">OWN A WEB</span>
             </a>
 
-            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">⋮</button>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -943,7 +1060,7 @@
         <!-- Contact Header Section -->
         <section class="section fade-in">
             <div class="section-header">
-                <div class="agency-badge">
+                <div class="contact-badge">
                     <span><i class="fas fa-message"></i></span> Get in Touch
                 </div>
                 <h1 class="section-title">Let's Create Together</h1>
@@ -992,19 +1109,16 @@
 
                     <!-- Social Media Links -->
                     <div class="social-links">
-                        <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <a href="https://www.instagram.com/your_mahmood/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-
-                        <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <a href="https://twitter.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
-
                         </a>
-                        <a href="https://whatsapp.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <a href="https://dribbble.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-
-                        <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -1015,25 +1129,24 @@
                     <h2>Send a Message</h2>
 
                     <form id="contactForm" action="https://formsubmit.co/ownaweb@hotmail.com" method="POST" novalidate>
-                        <!-- FormSubmit Configuration with Thank You Page -->
-                        <input type="hidden" name="_subject" value="New Contact Form Submission - OwnAWeb Agency">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission - Mahmood HM Portfolio">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
-                        <!-- IMPORTANT: Change this to your actual thank you page filename -->
                         <input type="hidden" name="_next" value="https://ownaweb.netlify.app/thank-you.html">
-                        <input type="hidden" name="_autoresponse" value="Thank you for contacting OwnAWeb! We've received your message and will get back to you within 24 hours.">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Mahmood HM! I've received your message and will get back to you within 24 hours.">
 
                         <!-- Form Fields -->
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name *</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required>
-                            <div class="error-message" id="nameError" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;"></div>
+                            <div class="error-message" id="nameError"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="form-label">Email Address *</label>
                             <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-                            <div class="error-message" id="emailError" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;"></div>
+                            <div class="error-message" id="emailError"></div>
                         </div>
 
                         <div class="form-group">
@@ -1046,14 +1159,13 @@
                             <select id="projectType" name="projectType" class="form-select" required>
                                 <option value="" disabled selected>Select project type</option>
                                 <option value="Website Design">Website Design</option>
-                                <option value="Brand Identity">Brand Identity</option>
+                                <option value="Web Development">Web Development</option>
                                 <option value="UI/UX Design">UI/UX Design</option>
                                 <option value="E-commerce">E-commerce Website</option>
                                 <option value="Website Redesign">Website Redesign</option>
-                                <option value="Design Consultation">Design Consultation</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <div class="error-message" id="projectTypeError" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;"></div>
+                            <div class="error-message" id="projectTypeError"></div>
                         </div>
 
                         <div class="form-group">
@@ -1072,7 +1184,7 @@
                         <div class="form-group">
                             <label for="message" class="form-label">Project Details *</label>
                             <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project, goals, timeline, and what you're hoping to achieve..." required></textarea>
-                            <div class="error-message" id="messageError" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;"></div>
+                            <div class="error-message" id="messageError"></div>
                         </div>
 
                         <button type="submit" class="submit-btn" id="submitBtn">
@@ -1083,9 +1195,9 @@
                         <!-- Success Message (fallback) -->
                         <div class="success-message" id="successMessage">
                             <h3>Thank You!</h3>
-                            <p>Your message has been sent. We'll get back to you soon.</p>
+                            <p>Your message has been sent. I'll get back to you soon.</p>
                             <p style="margin-top: 1rem; font-size: 0.9rem;">
-                                <a href="index.html" style="color: var(--primary); text-decoration: underline;">Return to Homepage</a>
+                                <a href="index.html">Return to Homepage</a>
                             </p>
                         </div>
                     </form>
@@ -1095,47 +1207,45 @@
 
         <!-- FAQ Section -->
         <section class="section">
-            <div class="faq-section fade-in">
-                <div class="section-header">
-                    <h2 class="section-title">Common Questions</h2>
-                    <p class="section-subtitle">Here are answers to some frequently asked questions</p>
+            <div class="section-header">
+                <h2 class="section-title">Common Questions</h2>
+                <p class="section-subtitle">Here are answers to some frequently asked questions</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>What's your typical process?</h3>
+                    <p>I start with understanding your goals and audience, then move to concepts, design, and revisions until I get it right. I maintain clear communication throughout.</p>
                 </div>
 
-                <div class="faq-grid">
-                    <div class="faq-item" tabindex="0">
-                        <h3>What's your typical process?</h3>
-                        <p>I start with understanding your goals and audience, then move to concepts, design, and revisions until I get it right. I maintain clear communication throughout.</p>
-                    </div>
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>How long does a project take?</h3>
+                    <p>It depends on the scope. A simple website might take 2-3 weeks, while a complete brand identity could take 4-6 weeks. I'll provide a timeline during our initial discussion.</p>
+                </div>
 
-                    <div class="faq-item" tabindex="0">
-                        <h3>How long does a project take?</h3>
-                        <p>It depends on the scope. A simple website might take 2-3 weeks, while a complete brand identity could take 4-6 weeks. We'll provide a timeline during our initial discussion.</p>
-                    </div>
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>Do you work with international clients?</h3>
+                    <p>Yes, I work with clients worldwide. I'm based in India but available for remote collaboration across all time zones with flexible communication schedules.</p>
+                </div>
 
-                    <div class="faq-item" tabindex="0">
-                        <h3>Do you work with international clients?</h3>
-                        <p>Yes, I work with clients worldwide. We're based in India but available for remote collaboration across all time zones with flexible communication schedules.</p>
-                    </div>
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>What are your rates?</h3>
+                    <p>I work on a project basis. After discussing your needs, I'll provide a detailed quote with clear deliverables and timelines that fit your budget.</p>
+                </div>
 
-                    <div class="faq-item" tabindex="0">
-                        <h3>What are your rates?</h3>
-                        <p>I work on a project basis. After discussing your needs, I'll provide a detailed quote with clear deliverables and timelines that fit your budget.</p>
-                    </div>
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>What's included in your web design service?</h3>
+                    <p>My web design packages typically include strategy, design, development, responsive implementation, basic SEO setup, and post-launch support for 30 days.</p>
+                </div>
 
-                    <div class="faq-item" tabindex="0">
-                        <h3>What's included in your web design service?</h3>
-                        <p>My web design packages typically include strategy, design, development, responsive implementation, basic SEO setup, and post-launch support for 30 days.</p>
-                    </div>
-
-                    <div class="faq-item" tabindex="0">
-                        <h3>Do you provide ongoing maintenance?</h3>
-                        <p>Yes, I offer maintenance plans to keep your website updated, secure, and performing optimally after launch.</p>
-                    </div>
+                <div class="faq-item fade-in" tabindex="0">
+                    <h3>Do you provide ongoing maintenance?</h3>
+                    <p>Yes, I offer maintenance plans to keep your website updated, secure, and performing optimally after launch.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA - Consistent with index.html -->
+        <!-- Contact CTA -->
         <section class="section">
             <div class="contact-cta fade-in" tabindex="0">
                 <h2>Ready to Start Your Project?</h2>
@@ -1153,38 +1263,35 @@
         </section>
     </main>
 
-    <!-- Footer - Consistent with index.html -->
+    <!-- Footer - matching index.html -->
     <footer class="footer">
         <div class="footer-content">
             <div class="nav-container" style="justify-content: center; margin-bottom: 2rem;">
                 <a href="index.html" class="logo">
                     <img src="https://i.ibb.co/mFMQbqZh/logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
-                    <span class="logo-text">OwnAWeb</span>
+                    <span class="logo-text">OWN A WEB</span>
                 </a>
             </div>
 
-            <!-- Social Media Links with Font Awesome -->
+            <!-- Social Media Links -->
             <div class="social-links">
-                <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-
-                        </a>
-                        <a href="https://whatsapp.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-
-                        <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
+                <a href="https://www.instagram.com/your_mahmood/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://dribbble.com/yourprofile" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
 
-            <p>© 2026 OwnAWeb. All rights reserved.</p>
+            <p>© 2026 Mahmood HM | OwnAWeb. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--gray);">
-                Follow us on social media for updates and insights
+                Let's create something amazing together
             </p>
         </div>
     </footer>
@@ -1195,48 +1302,42 @@
             document.documentElement.style.visibility = 'visible';
             document.documentElement.style.opacity = '1';
 
-            // Initialize mobile menu
             initMobileMenu();
-
-            // Initialize animations
             initAnimations();
+            createStars();
+            initFormValidation();
         });
 
-        // Initialize mobile menu functionality - Consistent with index.html
+        // Mobile menu functionality - matching index.html
         function initMobileMenu() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navLinks = document.querySelector('.nav-links');
 
             if (!mobileToggle || !navLinks) return;
 
-            // Toggle menu on button click
             mobileToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 toggleMobileMenu();
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.nav-container') && navLinks.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
 
-            // Close menu when clicking on a link
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     closeMobileMenu();
                 });
             });
 
-            // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navLinks.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
 
-            // Handle keyboard navigation for mobile toggle
             mobileToggle.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -1253,15 +1354,14 @@
             mobileToggle.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
 
-            // Toggle between hamburger and close icon
             if (navLinks.classList.contains('active')) {
                 mobileToggle.textContent = '✕';
                 mobileToggle.setAttribute('aria-label', 'Close menu');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                document.body.style.overflow = 'hidden';
             } else {
-                mobileToggle.textContent = '☰';
+                mobileToggle.textContent = '⋮';
                 mobileToggle.setAttribute('aria-label', 'Open menu');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         }
 
@@ -1271,12 +1371,12 @@
 
             mobileToggle.setAttribute('aria-expanded', 'false');
             navLinks.classList.remove('active');
-            mobileToggle.textContent = '☰';
+            mobileToggle.textContent = '⋮';
             mobileToggle.setAttribute('aria-label', 'Open menu');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
         }
 
-        // Header scroll effect - Consistent with index.html
+        // Header scroll effect
         const header = document.querySelector('.header');
         if (header) {
             window.addEventListener('scroll', () => {
@@ -1288,7 +1388,7 @@
             });
         }
 
-        // Smooth scroll for anchor links - Consistent with index.html
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -1297,13 +1397,10 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
-                    // Close mobile menu if open
                     closeMobileMenu();
                 }
             });
@@ -1311,7 +1408,6 @@
 
         // Initialize animations
         function initAnimations() {
-            // Add fade-in animation to elements on scroll - Consistent with index.html
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1320,101 +1416,118 @@
                 });
             }, { threshold: 0.1 });
 
-            // Observe all content sections
             document.querySelectorAll('.contact-info, .contact-form, .faq-item, .contact-cta').forEach(el => {
                 observer.observe(el);
             });
         }
 
-        // Form handling
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const submitText = document.getElementById('submitText');
-        const loadingSpinner = document.getElementById('loadingSpinner');
-        const successMessage = document.getElementById('successMessage');
-
-        // Form validation
-        function validateForm() {
-            let isValid = true;
-
-            // Reset error messages
-            document.querySelectorAll('.error-message').forEach(error => {
-                error.style.display = 'none';
-            });
-
-            // Validate name
-            const nameInput = document.getElementById('name');
-            if (!nameInput.value.trim()) {
-                document.getElementById('nameError').textContent = 'Please enter your name';
-                document.getElementById('nameError').style.display = 'block';
-                isValid = false;
+        // Create stars - matching index.html
+        function createStars() {
+            const numberOfStars = 60;
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 4 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = (Math.random() * 5) + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                document.body.appendChild(star);
             }
-
-            // Validate email
-            const emailInput = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailInput.value.trim()) {
-                document.getElementById('emailError').textContent = 'Please enter your email';
-                document.getElementById('emailError').style.display = 'block';
-                isValid = false;
-            } else if (!emailRegex.test(emailInput.value)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address';
-                document.getElementById('emailError').style.display = 'block';
-                isValid = false;
-            }
-
-            // Validate project type
-            const projectTypeInput = document.getElementById('projectType');
-            if (!projectTypeInput.value) {
-                document.getElementById('projectTypeError').textContent = 'Please select a project type';
-                document.getElementById('projectTypeError').style.display = 'block';
-                isValid = false;
-            }
-
-            // Validate message
-            const messageInput = document.getElementById('message');
-            if (!messageInput.value.trim()) {
-                document.getElementById('messageError').textContent = 'Please enter your project details';
-                document.getElementById('messageError').style.display = 'block';
-                isValid = false;
-            } else if (messageInput.value.trim().length < 10) {
-                document.getElementById('messageError').textContent = 'Please provide more details about your project';
-                document.getElementById('messageError').style.display = 'block';
-                isValid = false;
-            }
-
-            return isValid;
         }
 
-        // Form submission - UPDATED: Simple form submission without preventing default
-        contactForm.addEventListener('submit', async (e) => {
-            // Only validate, don't prevent default submission
-            if (!validateForm()) {
-                e.preventDefault();
-                return;
+        // Form validation
+        function initFormValidation() {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            function validateForm() {
+                let isValid = true;
+
+                // Reset error messages
+                document.querySelectorAll('.error-message').forEach(error => {
+                    error.style.display = 'none';
+                });
+
+                // Validate name
+                const nameInput = document.getElementById('name');
+                if (nameInput && !nameInput.value.trim()) {
+                    document.getElementById('nameError').textContent = 'Please enter your name';
+                    document.getElementById('nameError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validate email
+                const emailInput = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailInput) {
+                    if (!emailInput.value.trim()) {
+                        document.getElementById('emailError').textContent = 'Please enter your email';
+                        document.getElementById('emailError').style.display = 'block';
+                        isValid = false;
+                    } else if (!emailRegex.test(emailInput.value)) {
+                        document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                        document.getElementById('emailError').style.display = 'block';
+                        isValid = false;
+                    }
+                }
+
+                // Validate project type
+                const projectTypeInput = document.getElementById('projectType');
+                if (projectTypeInput && !projectTypeInput.value) {
+                    document.getElementById('projectTypeError').textContent = 'Please select a project type';
+                    document.getElementById('projectTypeError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validate message
+                const messageInput = document.getElementById('message');
+                if (messageInput) {
+                    if (!messageInput.value.trim()) {
+                        document.getElementById('messageError').textContent = 'Please enter your project details';
+                        document.getElementById('messageError').style.display = 'block';
+                        isValid = false;
+                    } else if (messageInput.value.trim().length < 10) {
+                        document.getElementById('messageError').textContent = 'Please provide more details about your project';
+                        document.getElementById('messageError').style.display = 'block';
+                        isValid = false;
+                    }
+                }
+
+                return isValid;
             }
 
-            // Show loading state briefly (form will submit anyway)
-            submitBtn.disabled = true;
-            submitText.style.display = 'none';
-            loadingSpinner.style.display = 'block';
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    if (!validateForm()) {
+                        e.preventDefault();
+                        return;
+                    }
 
-            // The form will now submit normally and redirect to thank-you.html via FormSubmit
-        });
+                    // Show loading state
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        if (submitText) submitText.style.display = 'none';
+                        if (loadingSpinner) loadingSpinner.style.display = 'block';
+                    }
+                });
+            }
 
-        // Real-time validation (for UX)
-        document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(input => {
-            input.addEventListener('blur', () => {
-                validateForm();
+            // Real-time validation
+            document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(input => {
+                input.addEventListener('blur', validateForm);
             });
-        });
+        }
 
-        // Add keyboard navigation for contact methods
+        // Keyboard navigation for contact methods
         document.querySelectorAll('.contact-method').forEach(method => {
             method.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    // Handle contact method click (e.g., focus email link)
                     const link = method.querySelector('a');
                     if (link) {
                         link.focus();
@@ -1423,18 +1536,17 @@
             });
         });
 
-        // Add keyboard navigation for FAQ items
+        // Keyboard navigation for FAQ items
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    // Handle FAQ item click
                     console.log('FAQ selected:', item.querySelector('h3').textContent);
                 }
             });
         });
 
-        // Simple analytics - Consistent with index.html
+        // Simple analytics check
         if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
             console.log('Analytics would be loaded in production');
         }

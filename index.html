@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CHANGED: Title for individual focus -->
     <title>Mahmood HM | Web Designer & Developer | OwnAWeb</title>
 
     <!-- SEO Meta Tags -->
-    <!-- CHANGED: Description for individual web developer -->
     <meta name="description" content="Mahmood HM - Professional Web Designer & Developer. Creating beautiful, functional websites with modern technologies. View portfolio and contact for web projects.">
     <meta name="keywords" content="web designer, web developer, frontend developer, portfolio, UI/UX, responsive web design, OwnAWeb">
     <meta name="author" content="Mahmood HM">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Mahmood HM | Web Designer & Developer">
-    <!-- CHANGED: OG description for individual -->
     <meta property="og:description" content="Crafting custom websites with clean code and modern design.">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:image" content="https://yourdomain.com/og-image.jpg"> -->
-    <!-- <meta property="og:url" content="https://yourdomain.com"> -->
 
     <!-- Simple Emoji Favicon for Web Developer -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
@@ -42,18 +37,20 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --gray-lighter: #f1f5f9; /* Added for better contrast */
-            --card: #1e293b;
+            /* White theme - replaced acid green with white */
+            --primary: #ffffff;
+            --primary-light: #f5f5f5;
+            --primary-dark: #cccccc;
+            --secondary: #e6e6e6;
+            --dark: #0a0c0b;
+            --darker: #030504;
+            --light: #f0fdf4;
+            --gray: #9ca3af;
+            --gray-light: #d1d5db;
+            --gray-lighter: #e5e7eb;
+            --card: #1c231f;
             --transition: all 0.3s ease;
+            --glow-white: 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
         * {
@@ -68,11 +65,13 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            /* deep dark gradient with white influence */
+            background: linear-gradient(145deg, #0f120f 0%, #1a241a 50%, #0b1a0b 100%);
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
         }
 
         /* Skip to main content for accessibility */
@@ -81,33 +80,34 @@
             top: -40px;
             left: 0;
             background: var(--primary);
-            color: white;
+            color: var(--darker);
             padding: 8px;
             z-index: 1001;
             text-decoration: none;
             border-radius: 0 0 4px 0;
+            font-weight: 600;
         }
 
         .skip-to-content:focus {
             top: 0;
         }
 
-        /* Header & Navigation */
+        /* Header & Navigation - NOW TRANSPARENT LIKE FOOTER */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.92);
+            background: rgba(3, 5, 4, 0.6); /* same as footer background */
             backdrop-filter: blur(12px);
             z-index: 1000;
             padding: 1.2rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
         }
 
         .header.scrolled {
             padding: 0.8rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .nav-container {
@@ -128,10 +128,11 @@
 
         .logo-img {
             height: 40px;
-            width: 40px; /* Fixed dimensions for better CLS */
+            width: 40px;
             transition: var(--transition);
             border-radius: 8px;
             object-fit: cover;
+            filter: brightness(1.1) saturate(1.2);
         }
 
         .logo:hover .logo-img {
@@ -165,7 +166,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-light);
+            color: var(--gray-light);
         }
 
         .nav-links a.active {
@@ -182,6 +183,7 @@
             height: 2px;
             background: var(--primary);
             border-radius: 2px;
+            box-shadow: 0 0 8px var(--primary);
         }
 
         .mobile-toggle {
@@ -198,7 +200,7 @@
 
         /* Icon Styles */
         .email-icon {
-            color: var(--primary-light);
+            color: var(--primary);
             font-size: 1.25rem;
             width: 20px;
             height: 20px;
@@ -242,6 +244,7 @@
             flex: 0 0 360px;
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -250,6 +253,7 @@
             position: relative;
             width: 360px;
             height: 360px;
+            margin-bottom: 1.5rem;
         }
 
         .profile-photo {
@@ -262,8 +266,39 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border: 4px solid var(--primary);
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.4);
             z-index: 2;
+            transition: var(--transition);
+        }
+
+        .profile-photo:hover {
+            transform: translate(-50%, -50%) scale(1.02);
+        }
+
+        .hero-profile::before {
+            content: '';
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: 1;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .hero-profile::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.4), transparent 75%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            opacity: 0.7;
+            pointer-events: none;
         }
 
         .circular-text {
@@ -271,6 +306,7 @@
             width: 100%;
             height: 100%;
             animation: rotateText 20s linear infinite;
+            z-index: 3;
         }
 
         .circular-text span {
@@ -280,10 +316,59 @@
             transform-origin: 0 180px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
-            color: var(--primary-light);
+            color: var(--primary);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 0 0 8px currentColor;
+        }
+
+        /* NEW: Auto-typing container ABOVE buttons */
+        .hero-typing-block {
+            margin-bottom: 2rem;  /* space before buttons */
+            width: 100%;
+        }
+
+        .typing-line {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+            font-size: 1.1rem;
+        }
+
+        .static-label {
+            color: var(--primary);
+            font-weight: 500;
+            margin-right: 0.2rem;
+            opacity: 0.9;
+        }
+
+        .dynamic-text {
+            color: #e0f2e0;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.3rem;
+            background-color: var(--primary);
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
 
         .hero-title {
@@ -297,6 +382,8 @@
         .hero-title span {
             color: var(--primary);
             position: relative;
+            /* CHANGED: Removed the white glow from the text */
+            text-shadow: none;
         }
 
         .hero-title span::after {
@@ -307,30 +394,33 @@
             width: 100%;
             height: 3px;
             background: var(--primary);
-            opacity: 0.3;
+            opacity: 0.5;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--gray-lighter); /* Improved contrast */
+            color: var(--gray-lighter);
             margin-bottom: 2.5rem;
             max-width: 600px;
             line-height: 1.7;
         }
 
-        /* Agency Badge - CHANGED to Web Developer Badge */
+        /* Web Developer Badge */
         .web-dev-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: var(--primary-light);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: var(--primary);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         /* Buttons */
@@ -340,7 +430,7 @@
             gap: 0.75rem;
             padding: 1rem 2.5rem;
             background: var(--primary);
-            color: white;
+            color: var(--darker);
             text-decoration: none;
             border-radius: 10px;
             font-weight: 600;
@@ -348,15 +438,16 @@
             border: 2px solid transparent;
             transition: var(--transition);
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
         .btn:hover,
         .btn:focus {
-            background: transparent;
-            border-color: var(--primary);
-            color: var(--primary);
+            background: var(--primary);
+            border-color: transparent;
+            color: var(--darker);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
             outline: none;
         }
 
@@ -369,24 +460,27 @@
             background: transparent;
             border-color: var(--gray);
             color: var(--gray-light);
+            box-shadow: none;
         }
 
         .btn-secondary:hover,
         .btn-secondary:focus {
-            border-color: var(--primary);
-            color: var(--primary);
+            border-color: var(--gray);
+            color: var(--gray-light);
             background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
         }
 
         /* Projects Section */
         .section {
-            padding: 4rem 2rem; /* Reduced padding */
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
-            margin-bottom: 3rem; /* Reduced margin */
+            margin-bottom: 3rem;
             text-align: center;
         }
 
@@ -416,7 +510,7 @@
             background: var(--card);
             border-radius: 16px;
             padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -424,14 +518,14 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .project-card:focus-within {
             transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             outline: 2px solid var(--primary-light);
             outline-offset: 4px;
         }
@@ -449,7 +543,7 @@
         }
 
         .project-card:hover::before {
-            opacity: 1;
+            opacity: 0;
         }
 
         .project-card h3 {
@@ -466,12 +560,13 @@
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            background: linear-gradient(145deg, rgba(28, 35, 31, 0.9) 0%, rgba(10, 20, 8, 0.95) 100%);
             border-radius: 24px;
             padding: 4rem;
-            margin: 2rem auto; /* Reduced margin */
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 2rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             max-width: 800px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .contact-header {
@@ -491,15 +586,15 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             margin-top: 2rem;
         }
 
         .contact-info a {
-            color: var(--primary-light);
+            color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -510,6 +605,7 @@
             color: var(--primary);
             text-decoration: underline;
             outline: none;
+            text-shadow: none;
         }
 
         /* Social Media Links */
@@ -527,19 +623,19 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             color: var(--gray-light);
             text-decoration: none;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .social-link:hover,
         .social-link:focus {
-            background: var(--primary);
-            color: white;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--gray-light);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
             outline: none;
         }
 
@@ -555,9 +651,10 @@
         .footer {
             text-align: center;
             padding: 4rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--gray);
             font-size: 0.9rem;
+            background: rgba(3, 5, 4, 0.6);
         }
 
         .footer-content {
@@ -581,7 +678,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(15, 23, 42, 0.98);
+                background: rgba(10, 20, 8, 0.98);
                 backdrop-filter: blur(12px);
                 flex-direction: column;
                 padding: 6rem 2rem 2rem;
@@ -590,7 +687,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: var(--transition);
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
                 z-index: 1001;
                 width: 280px;
                 height: 100vh;
@@ -612,17 +709,17 @@
                 padding: 1rem;
                 border-radius: 8px;
                 font-size: 1.1rem;
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
                 background: rgba(255, 255, 255, 0.05);
             }
 
             .nav-links a:hover {
-                background: rgba(37, 99, 235, 0.1);
-                border-color: var(--primary);
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(255, 255, 255, 0.2);
             }
 
             .nav-links a.active {
-                background: rgba(37, 99, 235, 0.15);
+                background: rgba(255, 255, 255, 0.2);
                 border-color: var(--primary);
             }
 
@@ -630,7 +727,7 @@
                 padding: 8rem 1.5rem 4rem;
                 text-align: center;
                 flex-direction: column;
-                gap: 3rem;
+                gap: 2rem;
             }
 
             .hero-profile {
@@ -641,6 +738,7 @@
             .profile-container {
                 width: 300px;
                 height: 300px;
+                margin-bottom: 1rem;
             }
 
             .profile-photo {
@@ -652,17 +750,27 @@
                 transform-origin: 0 150px;
             }
 
+            .hero-typing-block {
+                display: flex;
+                justify-content: center;
+            }
+
+            .typing-line {
+                font-size: 0.95rem;
+                padding: 0.5rem 1rem;
+            }
+
             .hero-title {
                 font-size: 2.5rem;
             }
 
             .section {
-                padding: 3rem 1.5rem; /* Reduced for mobile */
+                padding: 3rem 1.5rem;
             }
 
             .contact {
                 padding: 2.5rem 1.5rem;
-                margin: 1rem auto; /* Reduced margin for mobile */
+                margin: 1rem auto;
             }
 
             .projects-grid {
@@ -692,6 +800,15 @@
             .social-link i {
                 font-size: 1.1rem;
             }
+
+            .hero-profile::before {
+                width: 350px;
+                height: 350px;
+            }
+            .hero-profile::after {
+                width: 400px;
+                height: 400px;
+            }
         }
 
         /* Animations */
@@ -702,7 +819,7 @@
 
         @keyframes rotateText {
             from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            to { transform: rotate(-360deg); }
         }
 
         .fade-in {
@@ -735,22 +852,125 @@
                 animation: none;
             }
         }
+
+        /* ---------- COSMIC / FONT AWESOME CLOUDS ---------- */
+        /* Simple glowing moon - elegant */
+        .moon {
+            position: fixed;
+            top: 120px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #f8f4e6, #e8dfce);
+            border-radius: 50%;
+            box-shadow: 0 0 80px rgba(255, 255, 220, 0.9), 0 0 150px rgba(255, 255, 255, 0.6);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.95;
+        }
+
+        /* static stars (twinkling via css) */
+        .star {
+            position: fixed;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #ffffff, 0 0 20px rgba(255,255,200,0.6);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Font Awesome cloud styling - simple icon clouds */
+        .fa-cloud {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.4);
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+            z-index: 0;
+            pointer-events: none;
+            font-size: 6rem;
+            opacity: 0.5;
+            animation: drift linear infinite;
+        }
+
+        .fa-cloud-1 {
+            top: 15%;
+            left: -150px;
+            font-size: 8rem;
+            animation-duration: 140s;
+        }
+        .fa-cloud-2 {
+            top: 45%;
+            left: -200px;
+            font-size: 10rem;
+            animation-duration: 180s;
+            animation-delay: -30s;
+        }
+        .fa-cloud-3 {
+            top: 75%;
+            left: -100px;
+            font-size: 7rem;
+            animation-duration: 120s;
+            animation-delay: -60s;
+        }
+
+        @keyframes drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 300px)); }
+        }
+
+        /* ensure content sits above background */
+        main, header, footer {
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            z-index: 1000;
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 768px) {
+            .moon {
+                width: 70px;
+                height: 70px;
+                top: 80px;
+                right: 20px;
+            }
+            .fa-cloud-1 { font-size: 5rem; top: 10%; left: -100px; }
+            .fa-cloud-2 { font-size: 6rem; top: 40%; left: -150px; }
+            .fa-cloud-3 { font-size: 4rem; top: 70%; left: -80px; }
+        }
     </style>
 </head>
 <body>
+    <!-- Cosmic & Font Awesome cloud background elements -->
+    <div class="moon"></div>
+    <!-- static stars (generated via js) will be inserted here -->
+
+    <!-- Font Awesome cloud icons (simple, symbolic) -->
+    <i class="fas fa-cloud fa-cloud-1"></i>
+    <i class="fas fa-cloud fa-cloud-2"></i>
+    <i class="fas fa-cloud fa-cloud-3"></i>
+
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Header -->
+    <!-- Header - now with transparent background matching footer -->
     <header class="header">
         <div class="nav-container">
 
             <a href="index.html" class="logo">
                 <img src="https://i.ibb.co/mFMQbqZh/logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
-                <span class="logo-text">OwnAWeb</span>
+                <span class="logo-text">OWN A WEB</span>
             </a>
 
-            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">⋮</button>
 
             <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
@@ -765,19 +985,27 @@
     <main id="main-content">
         <section class="hero fade-in">
             <div class="hero-content">
-                <!-- CHANGED: Web Developer badge instead of Agency badge -->
                 <div class="web-dev-badge">
                     <span><i class="fas fa-code"></i></span> Web Designer & Developer
                 </div>
                 <h1 class="hero-title">
                     Building Digital <span>Experiences</span>
                 </h1>
-                <!-- CHANGED: Subtitle focused on individual web development -->
                 <p class="hero-subtitle">
                     Hey, there! I'm Mahmood HM. I specialize in creating custom websites with clean code and modern design.
                     From responsive layouts to interactive features, I transform ideas into
                     functional web solutions that deliver results.
                 </p>
+
+                <!-- NEW: Auto-typing block placed above buttons -->
+                <div class="hero-typing-block">
+                    <div class="typing-line">
+                        <span class="static-label">⚡</span>
+                        <span class="dynamic-text" id="heroTypingText"></span>
+                        <span class="cursor" id="typingCursor"></span>
+                    </div>
+                </div>
+
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="#projects" class="btn">
                         View My Work
@@ -791,8 +1019,7 @@
 
             <div class="hero-profile">
                 <div class="profile-container">
-
-                    <!-- Profile photo - replace with your actual image -->
+                    <!-- Profile photo with white glow -->
                     <img src="https://i.ibb.co/yBgvYwHW/profile.png"
                          alt="Mahmood HM - Web Designer & Developer"
                          class="profile-photo">
@@ -802,6 +1029,7 @@
                         <!-- Text positions will be set by JavaScript -->
                     </div>
                 </div>
+                <!-- removed old typing from here -->
             </div>
         </section>
 
@@ -813,7 +1041,6 @@
             </div>
 
             <div class="projects-grid">
-                <!-- CHANGED: Web development focused project descriptions -->
                 <div class="project-card" tabindex="0">
                     <h3>Bloom E-commerce</h3>
                     <p>Built a fully responsive e-commerce website with shopping cart functionality,
@@ -860,13 +1087,12 @@
             <div class="nav-container" style="justify-content: center; margin-bottom: 2rem;">
                 <a href="#" class="logo">
                     <img src="https://i.ibb.co/mFMQbqZh/logo.png" alt="OwnAWeb Logo" class="logo-img" width="40" height="40" loading="lazy">
-                    <span class="logo-text">OwnAWeb</span>
+                    <span class="logo-text">OWN A WEB</span>
                 </a>
             </div>
 
             <!-- Social Media Links with Font Awesome -->
             <div class="social-links">
-                <!-- CHANGED: Added portfolio-relevant social platforms -->
                 <a href="https://www.instagram.com/your_mahmood/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
@@ -882,7 +1108,6 @@
             </div>
 
             <p>© 2026 Mahmood HM | OwnAWeb. All rights reserved.</p>
-            <!-- CHANGED: More relevant footer text for web developer -->
             <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--gray);">
                 Connect with me for web development insights and opportunities
             </p>
@@ -895,83 +1120,68 @@
             document.documentElement.style.visibility = 'visible';
             document.documentElement.style.opacity = '1';
 
-            // Create circular text - CHANGED: Updated text for web developer
             createCircularText();
-
-            // Initialize mobile menu
             initMobileMenu();
+            initTypingLoop(); // new typing loop above buttons
+            createStars();    // create twinkling stars
         });
 
-        // Create circular text around profile photo - CHANGED: Updated text
         function createCircularText() {
             const circularText = document.querySelector('.circular-text');
             if (!circularText) return;
 
-            // Updated text for web developer
             const text = "WEB DESIGN • FRONTEND DEVELOPMENT • RESPONSIVE DESIGN • UI/UX • HTML • CSS • JAVASCRIPT •";
 
-            // Determine radius based on screen size
             let radius;
             if (window.innerWidth <= 768) {
-                radius = 150; // Mobile: half of 300px
+                radius = 150;
             } else {
-                radius = 180; // Desktop: half of 360px
+                radius = 180;
             }
 
-            // Clear any existing text
             circularText.innerHTML = '';
 
-            // Split the text into characters and position them in a circle
             for (let i = 0; i < text.length; i++) {
                 const span = document.createElement('span');
                 span.textContent = text[i];
-
-                // Calculate angle for each character
                 const angle = (i * 360) / text.length;
                 span.style.transform = `rotate(${angle}deg)`;
-
+                span.style.transformOrigin = `0 ${radius}px`;
                 circularText.appendChild(span);
             }
         }
 
-        // Recreate circular text on window resize
         window.addEventListener('resize', createCircularText);
 
-        // Initialize mobile menu functionality
         function initMobileMenu() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navLinks = document.querySelector('.nav-links');
 
             if (!mobileToggle || !navLinks) return;
 
-            // Toggle menu on button click
             mobileToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 toggleMobileMenu();
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.nav-container') && navLinks.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
 
-            // Close menu when clicking on a link
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     closeMobileMenu();
                 });
             });
 
-            // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navLinks.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
 
-            // Handle keyboard navigation for mobile toggle
             mobileToggle.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -988,15 +1198,14 @@
             mobileToggle.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
 
-            // Toggle between hamburger and close icon
             if (navLinks.classList.contains('active')) {
                 mobileToggle.textContent = '✕';
                 mobileToggle.setAttribute('aria-label', 'Close menu');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                document.body.style.overflow = 'hidden';
             } else {
-                mobileToggle.textContent = '☰';
+                mobileToggle.textContent = '⋮';
                 mobileToggle.setAttribute('aria-label', 'Open menu');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         }
 
@@ -1006,12 +1215,11 @@
 
             mobileToggle.setAttribute('aria-expanded', 'false');
             navLinks.classList.remove('active');
-            mobileToggle.textContent = '☰';
+            mobileToggle.textContent = '⋮';
             mobileToggle.setAttribute('aria-label', 'Open menu');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
         }
 
-        // Header scroll effect
         const header = document.querySelector('.header');
         if (header) {
             window.addEventListener('scroll', () => {
@@ -1023,7 +1231,6 @@
             });
         }
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -1032,19 +1239,15 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
-                    // Close mobile menu if open
                     closeMobileMenu();
                 }
             });
         });
 
-        // Add fade-in animation to elements on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1057,10 +1260,75 @@
             observer.observe(card);
         });
 
-        // Simple analytics (add your own tracking ID)
         if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
-            // Example: Add Google Analytics or other tracking here
             console.log('Analytics would be loaded in production');
+        }
+
+        // NEW: Auto-typing loop above the buttons (with blinking cursor)
+        function initTypingLoop() {
+            const typingElement = document.getElementById('heroTypingText');
+            if (!typingElement) return;
+
+            const sentences = [
+                "Frontend developer with an eye for design.",
+                "I build responsive, fast websites.",
+                "Let's turn your idea into reality."
+            ];
+            let sentenceIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let timeout = 100; // base speed
+
+            function typeEffect() {
+                const currentSentence = sentences[sentenceIndex];
+                let displayText = currentSentence.substring(0, charIndex);
+
+                typingElement.textContent = displayText;
+
+                if (!isDeleting && charIndex < currentSentence.length) {
+                    // typing forward
+                    charIndex++;
+                    timeout = 80;
+                } else if (isDeleting && charIndex > 0) {
+                    // deleting
+                    charIndex--;
+                    timeout = 50;
+                } else {
+                    // finished typing or deleting, switch state
+                    if (!isDeleting && charIndex === currentSentence.length) {
+                        // fully typed, wait a bit then start deleting
+                        isDeleting = true;
+                        timeout = 1500; // pause before delete
+                    } else if (isDeleting && charIndex === 0) {
+                        // fully deleted, move to next sentence
+                        isDeleting = false;
+                        sentenceIndex = (sentenceIndex + 1) % sentences.length;
+                        timeout = 300; // short pause before next sentence
+                    }
+                }
+
+                setTimeout(typeEffect, timeout);
+            }
+
+            // start the loop
+            typeEffect();
+        }
+
+        // function to generate random static stars with twinkling
+        function createStars() {
+            const numberOfStars = 60;
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 4 + 1; // between 1px and 5px
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = (Math.random() * 5) + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's'; // 2-5s
+                document.body.appendChild(star);
+            }
         }
     </script>
 </body>
